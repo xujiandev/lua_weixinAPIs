@@ -34,17 +34,23 @@ new
 get
 ---
 `syntax:  local ret, err = weixin_client:get(url, {p1=v1, p2=v2})`
-发送HTTP_GET的请求，形如：  
-curl https://weixinHOST/url?p1=v1&p2=v2    
+
+发送HTTP_GET的请求，形如：
+
+>'curl https://weixinHOST/url?p1=v1&p2=v2'
+
 其中，如果参数里需要appid，secret，access_token，直接将这个字段赋值为ture即可，如{appid = ture, secret = true, access_token = true, p1 = v1}
 
 post
 ---
 `syntax:  local ret, err = weixin_client:post(url, {p1=v1, p2=v2},  body)`
+
 发送HTTP_POST请求，{p1=v1, p2=v2}同get方法，body可以为table或者字符串，如果为table会转换成k1=v1&k2=v2的形式，
 形如: 
-curl https://weixinHOST/url?access_token=123 -d "k1=v1&kv=v2"
-curl https://weixinHOST/url?access_token=123 -d "{"k1":"v1", "k2":"v2"}" 
+
+>'curl https://weixinHOST/url?access_token=123 -d "k1=v1&kv=v2"'
+>'curl https://weixinHOST/url?access_token=123 -d "{"k1":"v1", "k2":"v2"}"'
+
 TODO
 =====
 对于json或者xml的自动生成
